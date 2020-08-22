@@ -1,0 +1,218 @@
+[
+  {
+    "name": "Equality",
+    "description": "to treat others as equal to myself and vice versa"
+  },
+  {
+    "name": "Fitness",
+    "description": "to maintain or improve or look after my physical and mental health"
+  },
+  {
+    "name": "Compassion/self-compassion",
+    "description": "to act kindly towards myself and others who are suffering"
+  },
+  {
+    "name": "Conformity",
+    "description": "to be respectful and obedient of rules and obligations"
+  },
+  {
+    "name": "Acceptance/self-acceptance",
+    "description": "to be accepting of myself, others, life, etc"
+  },
+  {
+    "name": "Patience",
+    "description": "to wait caclmly for what I want"
+  },
+  {
+    "name": "Pleasure",
+    "description": "to create and give pleasure to myself or others"
+  },
+  {
+    "name": "Kindness",
+    "description": "to be kind, considerate, nuturing or caring towards myself or others"
+  },
+  {
+    "name": "Industry",
+    "description": "to be industrious, hardworking and dedicated"
+  },
+  {
+    "name": "Safelty and protection",
+    "description": "to secure, protect or ensure my own safety, or that of others"
+  },
+  {
+    "name": "Self development",
+    "description": "to keep growing, advancing or improving in knowledge, skills, character or life experience"
+  },
+  {
+    "name": "Mindfulness",
+    "description": "to be open to, engaged in and curious about the present moment"
+  },
+  {
+    "name": "Persistence and commitment",
+    "description": "to continue resolutely, despite problems and difficulties"
+  },
+  {
+    "name": "Reciprocity",
+    "description": "to build relationships in which there is a fair balance of giving and taking"
+  },
+  {
+    "name": "Adventure",
+    "description": "to be adventurous; to activeli explore novel or stimulating experiences"
+  },
+  {
+    "name": "Beauty",
+    "description": "to appreciate, create, nuture or cultivate beauty in myself, others, the environment"
+  },
+  {
+    "name": "Intimacy",
+    "description": "to open up, reveal, and share myself emotionally or physically"
+  },
+  {
+    "name": "Romance",
+    "description": "to be romantic; to display and express love or strong affection"
+  },
+  {
+    "name": "Excitement",
+    "description": "to seek, create and engage in activities that are exciting or stimulating"
+  },
+  {
+    "name": "Order",
+    "description": "to be orderly and organised"
+  },
+  {
+    "name": "Sexuality",
+    "description": "to explore or express my sexuality"
+  },
+  {
+    "name": "Power",
+    "description": "to strongly influence or wield authority over others e.g. taking charge, leading, organising"
+  },
+  {
+    "name": "Friendliness",
+    "description": "to be friendly, companionable or agreeable toward others"
+  },
+  {
+    "name": "Contribution and generosity",
+    "description": "to contribute, give, help, assist or share"
+  },
+  {
+    "name": "Supportiveness",
+    "description": "to be supportive, helpful and avaiable to myself or others"
+  },
+  {
+    "name": "Self-awareness",
+    "description": "to be aware of my own thoughts, feelings and actions"
+  },
+  {
+    "name": "Challenge",
+    "description": "to keep challenging myself to grow, learn and improve"
+  },
+  {
+    "name": "Assertiveness",
+    "description": "to respectfully stand up for my rights and request what I want"
+  },
+  {
+    "name": "Fun and humour",
+    "description": "to be fun loving; to seek, create and engage in fun filled activities"
+  },
+  {
+    "name": "Responsibility",
+    "description": "to be responsible and accountable for my actions"
+  },
+  {
+    "name": "Caring/self care",
+    "description": "to be caring towards myself, others, the environment etc"
+  },
+  {
+    "name": "Fairness and justice",
+    "description": "to be fair and just to myself and others"
+  },
+  {
+    "name": "Gratitude",
+    "description": "to be grateful for appreciative of myself, others and life"
+  },
+  {
+    "name": "Respect/self-respect",
+    "description": "to treat myself and others with care and consideration"
+  },
+  {
+    "name": "Sensuality and pleasure",
+    "description": "to create or enjoy pleasurable and sensual experiences"
+  },
+  {
+    "name": "Encouragement",
+    "description": "to encourage and reward behaviour that I value in myself or others"
+  },
+  {
+    "name": "Authenticity",
+    "description": "to be authentic, genuine and real; to be true to myself"
+  },
+  {
+    "name": "Trust",
+    "description": "to be trustworthy; to be loyal, faithful, sincere and reliable"
+  },
+  {
+    "name": "Flexibility",
+    "description": "to adjust and adapt readily to changing circumstances"
+  },
+  {
+    "name": "Creativity",
+    "description": "to be creative or innovative"
+  },
+  {
+    "name": "Sensuality",
+    "description": "to create, explore and enjoy experiences that stimulate the five senses"
+  },
+  {
+    "name": "Love",
+    "description": "to act lovingly or affectionately toward myself or others"
+  },
+  {
+    "name": "Skilfulness",
+    "description": "to continually practice and imprive my skills and apply myself fully"
+  },
+  {
+    "name": "Self control",
+    "description": "to act in accordnace with my own ideals"
+  },
+  {
+    "name": "Spirituality",
+    "description": "to connect with things bigger than myself"
+  },
+  {
+    "name": "Connection",
+    "description": "to engage fully in whatever I'm doing and be fully present with others"
+  },
+  {
+    "name": "Courage",
+    "description": "to be courageous or brave; to persist in the face of fear, threat or difficulty"
+  },
+  {
+    "name": "Open mindedness",
+    "description": "to thing things through, see things from others' points of view and weigh evidence fairly"
+  },
+  {
+    "name": "Curiosity",
+    "description": "to be curious, open minded and interested; to explore and discover"
+  },
+  {
+    "name": "Honesty",
+    "description": "to be honest, truthful and sincere with myself and others"
+  },
+  {
+    "name": "Self care",
+    "description": "to look after my health and wellbeign and get my needs met"
+  },
+  {
+    "name": "Freedom and independence",
+    "description": "to choose how I live and help others do likewise"
+  },
+  {
+    "name": "Co-operation",
+    "description": "to be co-operative and collaborative with others"
+  },
+  {
+    "name": "Forgiveness/self-forgiveness",
+    "description": "to be forgiving toward myself or others"
+  }
+]
