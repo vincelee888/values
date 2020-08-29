@@ -12,12 +12,35 @@ import values from "./data/values";
 function StageSelect(props) {
   const stages = {
     intro: <Intro nextStep={props.nextStep} />,
+    "group-desc": (
+      <div>
+        <h1>Prioritise</h1>
+        <p>
+          To begin, we'll go through a number of Values. For each Value that
+          appears, rank it as to how important it is to you.
+        </p>
+        <p>
+          Don't worry too much if the description is seems ambiguous or similar
+          to a previous one, just go with how you interpret it.
+        </p>
+        <button onClick={() => props.nextStep()}>Next</button>
+      </div>
+    ),
     group: (
       <Group
         values={props.values}
         nextStep={props.nextStep}
         addToGroup={props.addToGroup}
       />
+    ),
+    "top10-desc": (
+      <div>
+        <h1>Refine</h1>
+        <p>
+          Next, we'll refine the Values that most resonate with you, down to 10.
+        </p>
+        <button onClick={() => props.nextStep()}>Next</button>
+      </div>
     ),
     top10: (
       <Top10
@@ -26,6 +49,13 @@ function StageSelect(props) {
         nextStep={props.nextStep}
         addToGroup={props.addToGroup}
       ></Top10>
+    ),
+    "top3-desc": (
+      <div>
+        <h1>Define</h1>
+        <p>Finally, we'll rank your top 10, to define your 3 core values.</p>
+        <button onClick={() => props.nextStep()}>Next</button>
+      </div>
     ),
     top3: (
       <Top3
@@ -52,9 +82,18 @@ function StageSelect(props) {
 
 class App extends Component {
   state = {
-    stages: ["intro", "group", "top10", "top3", "end"],
+    stages: [
+      "intro",
+      "group-desc",
+      "group",
+      "top10-desc",
+      "top10",
+      "top3-desc",
+      "top3",
+      "end",
+    ],
     stageIndex: 0,
-    values,
+    values: values.slice(0, 11),
     groups: {
       priority: new Set(),
       important: new Set(),

@@ -47,15 +47,17 @@ class Top10 extends Component {
   render() {
     return (
       <div>
-        <h1>Top10</h1>
-        <section>
-          <h2>Your Priority Values</h2>
-          {Array.from(this.props.groups.priority).map(this.toValueComponent)}
-        </section>
-        <section>
-          <h2>Your Top 10</h2>
-          {Array.from(this.props.groups.top10).map(this.toValueComponent)}
-        </section>
+        <h1>Refine</h1>
+        <div className="columns">
+          <section className="col col--two">
+            <h2>Your Most Important Values</h2>
+            {Array.from(this.props.groups.priority).map(this.toValueComponent)}
+          </section>
+          <section className="col col--two">
+            <h2>Your Top 10</h2>
+            {Array.from(this.props.groups.top10).map(this.toValueComponent)}
+          </section>
+        </div>
         <Button
           nextStep={this.props.nextStep}
           top10={this.props.groups.top10}

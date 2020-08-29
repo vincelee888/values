@@ -24,7 +24,7 @@ class Top3 extends Component {
             </div>
           );
         })}
-        <button onClick={() => this.props.nextStep()}>Next</button>
+        <button onClick={() => this.props.nextStep()}>Finish</button>
       </div>
     );
   }

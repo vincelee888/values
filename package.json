@@ -10,14 +10,15 @@
     "gh-pages": "^3.1.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "styled-components": "^5.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "gh-pages -b gh-pages -d build"
+    "deploy": "gh-pages -b gh-pages -d build -f"
   },
   "eslintConfig": {
     "extends": "react-app"

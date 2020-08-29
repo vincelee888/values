@@ -8,11 +8,18 @@ function Value(props) {
       <div>
         <h2>{props.valueKey}</h2>
         <p>{props.desc}</p>
-        <button onClick={() => props.addToGroup("priority")}>Priority</button>
-        <button onClick={() => props.addToGroup("important")}>Important</button>
-        <button onClick={() => props.addToGroup("unimportant")}>
-          Not Important
-        </button>
+        <div>
+          <h3>This Value is:</h3>
+          <button onClick={() => props.addToGroup("priority")}>
+            very important to me
+          </button>
+          <button onClick={() => props.addToGroup("important")}>
+            quite important to me
+          </button>
+          <button onClick={() => props.addToGroup("unimportant")}>
+            not important to me
+          </button>
+        </div>
       </div>
     );
   }
@@ -34,7 +41,10 @@ class Group extends Component {
   render() {
     return (
       <div>
-        <h1>Group</h1>
+        <h1>Prioritise</h1>
+        <p>
+          Press the button that best describes how each Value relates to you.
+        </p>
         <Value
           addToGroup={this.addToGroup}
           nextStep={this.props.nextStep}
