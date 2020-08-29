@@ -40,7 +40,7 @@ class Group extends Component {
           nextStep={this.props.nextStep}
           isFinished={this.state.isFinished}
           valueKey={this.props.values[this.state.index].key}
-          desc={this.props.values[this.state.index].desc}
+          desc={this.props.values[this.state.index].description}
         />
       </div>
     );
