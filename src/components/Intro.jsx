@@ -6,7 +6,7 @@ class Intro extends Component {
     return (
       <div>
         <h1>Intro</h1>
-        <p>blah blah</p>
+        <p>Find your values</p>
         <button onClick={() => this.props.nextStep()}>Next</button>
       </div>
     );
