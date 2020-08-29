@@ -9,6 +9,8 @@ import End from "./components/End";
 
 import values from "./data/values";
 
+import { shuffle } from "./helpers/array";
+
 function StageSelect(props) {
   const stages = {
     intro: <Intro nextStep={props.nextStep} />,
@@ -93,7 +95,7 @@ class App extends Component {
       "end",
     ],
     stageIndex: 0,
-    values: values.slice(0, 11),
+    values: shuffle(values),
     groups: {
       priority: new Set(),
       important: new Set(),
