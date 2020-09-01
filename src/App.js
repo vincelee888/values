@@ -1,21 +1,50 @@
 import React, { Component } from "react";
 import "./App.css";
 
-import Intro from "./components/Intro";
 import Group from "./components/Group";
 import Top10 from "./components/Top10";
 import Top3 from "./components/Top3";
 import End from "./components/End";
 
 import values from "./data/values";
+import {
+  ButtonStyles,
+  MainInputStyles,
+  SectionStyles,
+} from "./components/styles";
 
 import { shuffle } from "./helpers/array";
 
 function StageSelect(props) {
+  const {
+    values,
+    groups,
+    nextStep,
+    addToGroup,
+    moveToTop,
+    moveUp,
+    moveDown,
+  } = props;
+
   const stages = {
-    intro: <Intro nextStep={props.nextStep} />,
+    intro: (
+      <SectionStyles>
+        <h1>Value-Driven Decision Making</h1>
+        <p>
+          During stressful times, we often allow an automatic reaction take
+          control, and lead us into an undesirable outcome. By identifying our
+          core values or qualities that are important to us, and keeping those
+          in mind throughout the day, we can take actions that embody and fulfil
+          these values, leading us down a more beneficial and fulfilling path.
+        </p>
+        <p>This app seeks to help you discover your own personal values.</p>
+        <MainInputStyles>
+          <ButtonStyles onClick={() => nextStep()}>Start</ButtonStyles>
+        </MainInputStyles>
+      </SectionStyles>
+    ),
     "group-desc": (
-      <div>
+      <SectionStyles>
         <h1>Prioritise</h1>
         <p>
           To begin, we'll go through a number of Values. For each Value that
@@ -25,54 +54,56 @@ function StageSelect(props) {
           Don't worry too much if the description is seems ambiguous or similar
           to a previous one, just go with how you interpret it.
         </p>
-        <button onClick={() => props.nextStep()}>Next</button>
-      </div>
+        <MainInputStyles>
+          <ButtonStyles onClick={() => nextStep()}>Next</ButtonStyles>
+        </MainInputStyles>
+      </SectionStyles>
     ),
     group: (
-      <Group
-        values={props.values}
-        nextStep={props.nextStep}
-        addToGroup={props.addToGroup}
-      />
+      <Group values={values} nextStep={nextStep} addToGroup={addToGroup} />
     ),
     "top10-desc": (
-      <div>
+      <SectionStyles>
         <h1>Refine</h1>
         <p>
           Next, we'll refine the Values that most resonate with you, down to 10.
         </p>
-        <button onClick={() => props.nextStep()}>Next</button>
-      </div>
+        <MainInputStyles>
+          <ButtonStyles onClick={() => nextStep()}>Next</ButtonStyles>
+        </MainInputStyles>
+      </SectionStyles>
     ),
     top10: (
       <Top10
-        groups={props.groups}
-        values={props.values}
-        nextStep={props.nextStep}
-        addToGroup={props.addToGroup}
+        groups={groups}
+        values={values}
+        nextStep={nextStep}
+        addToGroup={addToGroup}
       ></Top10>
     ),
     "top3-desc": (
-      <div>
+      <SectionStyles>
         <h1>Define</h1>
         <p>Finally, we'll rank your top 10, to define your 3 core values.</p>
-        <button onClick={() => props.nextStep()}>Next</button>
-      </div>
+        <MainInputStyles>
+          <ButtonStyles onClick={() => nextStep()}>Next</ButtonStyles>
+        </MainInputStyles>
+      </SectionStyles>
     ),
     top3: (
       <Top3
-        top10={props.groups.top10}
-        values={props.values}
-        moveToTop={props.moveToTop}
-        moveUp={props.moveUp}
-        moveDown={props.moveDown}
-        nextStep={props.nextStep}
+        top10={groups.top10}
+        values={values}
+        moveToTop={moveToTop}
+        moveUp={moveUp}
+        moveDown={moveDown}
+        nextStep={nextStep}
       ></Top3>
     ),
     end: (
       <End
-        myValues={Array.from(props.groups.top10).slice(0, 3)}
-        values={props.values}
+        myValues={Array.from(groups.top10).slice(0, 3)}
+        values={values}
       ></End>
     ),
   };
@@ -95,7 +126,7 @@ class App extends Component {
       "end",
     ],
     stageIndex: 0,
-    values: shuffle(values),
+    values: shuffle(values).slice(0, 11),
     groups: {
       priority: new Set(),
       important: new Set(),

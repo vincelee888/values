@@ -1,31 +1,45 @@
 import React, { Component } from "react";
 
+import Value from "./Value";
+import {
+  SectionStyles,
+  ButtonStyles,
+  MainInputStyles,
+  ValueStyles,
+} from "./styles";
+
 class Top3 extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <SectionStyles>
         <h1>Top3</h1>
         {Array.from(this.props.top10).map((curr) => {
-          const value = this.props.values.find((v) => v.key === curr);
+          const { key, description } = this.props.values.find(
+            (v) => v.key === curr
+          );
           return (
-            <div>
-              <h2>{value.key}</h2>
-              <p>{value.description}</p>
-              <button onClick={() => this.props.moveToTop("top10", value.key)}>
+            <ValueStyles>
+              <h1>{key}</h1>
+              <p>{description}</p>
+              <ButtonStyles onClick={() => this.props.moveToTop("top10", key)}>
                 Move to Top
-              </button>
-              <button onClick={() => this.props.moveUp("top10", value.key)}>
+              </ButtonStyles>
+              <ButtonStyles onClick={() => this.props.moveUp("top10", key)}>
                 Move Up
-              </button>
-              <button onClick={() => this.props.moveDown("top10", value.key)}>
+              </ButtonStyles>
+              <ButtonStyles onClick={() => this.props.moveDown("top10", key)}>
                 Move Down
-              </button>
-            </div>
+              </ButtonStyles>
+            </ValueStyles>
           );
         })}
-        <button onClick={() => this.props.nextStep()}>Finish</button>
-      </div>
+        <MainInputStyles>
+          <ButtonStyles onClick={() => this.props.nextStep()}>
+            Finish
+          </ButtonStyles>
+        </MainInputStyles>
+      </SectionStyles>
     );
   }
 }

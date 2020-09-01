@@ -1,22 +1,21 @@
 import React, { Component } from "react";
 
+import Value from "./Value";
+
 class End extends Component {
   state = {};
   render() {
     return (
-      <div>
+      <section>
         <h1>Your Core Values</h1>
         <p>You have defined your core Values at this point in time, to be:</p>
         {Array.from(this.props.myValues).map((curr) => {
-          const value = this.props.values.find((v) => v.key === curr);
-          return (
-            <div>
-              <h2>{value.key}</h2>
-              <p>{value.description}</p>
-            </div>
+          const { key, description } = this.props.values.find(
+            (v) => v.key === curr
           );
+          return <Value name={key} description={description} />;
         })}
-      </div>
+      </section>
     );
   }
 }

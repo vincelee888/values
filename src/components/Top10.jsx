@@ -1,26 +1,33 @@
 import React, { Component } from "react";
 
+import {
+  ValueStyles,
+  MainInputStyles,
+  ButtonStyles,
+  SectionStyles,
+} from "./styles";
+
 class Value extends Component {
   state = {};
   render() {
     console.log(this.props);
     return (
-      <div>
+      <ValueStyles>
         <h1>{this.props.value.key}</h1>
         <p>{this.props.value.description}</p>
-        <button
+        <ButtonStyles
           onClick={() =>
             this.props.addToGroup("priority", this.props.value.key)
           }
         >
           &lt;
-        </button>
-        <button
+        </ButtonStyles>
+        <ButtonStyles
           onClick={() => this.props.addToGroup("top10", this.props.value.key)}
         >
           &gt;
-        </button>
-      </div>
+        </ButtonStyles>
+      </ValueStyles>
     );
   }
 }
@@ -28,7 +35,13 @@ class Button extends Component {
   state = {};
   render() {
     if (this.props.top10.size === 10) {
-      return <button onClick={() => this.props.nextStep()}>Next</button>;
+      return (
+        <MainInputStyles>
+          <ButtonStyles onClick={() => this.props.nextStep()}>
+            Next
+          </ButtonStyles>
+        </MainInputStyles>
+      );
     } else {
       return <span></span>;
     }
@@ -46,7 +59,7 @@ class Top10 extends Component {
   };
   render() {
     return (
-      <div>
+      <SectionStyles>
         <h1>Refine</h1>
         <div className="columns">
           <section className="col col--two">
@@ -62,7 +75,7 @@ class Top10 extends Component {
           nextStep={this.props.nextStep}
           top10={this.props.groups.top10}
         />
-      </div>
+      </SectionStyles>
     );
   }
 }

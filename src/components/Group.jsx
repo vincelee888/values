@@ -1,25 +1,32 @@
 import React, { Component } from "react";
 
-function Value(props) {
-  if (props.isFinished) {
-    return <button onClick={() => props.nextStep()}>Next</button>;
+import Value from "./Value";
+import { ButtonStyles, MainInputStyles, SectionStyles } from "./styles";
+
+function Values(props) {
+  const { isFinished, valueKey, desc, addToGroup, nextStep } = props;
+
+  if (isFinished) {
+    return (
+      <MainInputStyles>
+        <ButtonStyles onClick={() => nextStep()}>Next</ButtonStyles>
+      </MainInputStyles>
+    );
   } else {
     return (
       <div>
-        <h2>{props.valueKey}</h2>
-        <p>{props.desc}</p>
-        <div>
-          <h3>This Value is:</h3>
-          <button onClick={() => props.addToGroup("priority")}>
+        <Value name={valueKey} description={desc} />
+        <MainInputStyles>
+          <ButtonStyles onClick={() => addToGroup("priority")}>
             very important to me
-          </button>
-          <button onClick={() => props.addToGroup("important")}>
+          </ButtonStyles>
+          <ButtonStyles onClick={() => addToGroup("important")}>
             quite important to me
-          </button>
-          <button onClick={() => props.addToGroup("unimportant")}>
+          </ButtonStyles>
+          <ButtonStyles onClick={() => addToGroup("unimportant")}>
             not important to me
-          </button>
-        </div>
+          </ButtonStyles>
+        </MainInputStyles>
       </div>
     );
   }
@@ -40,19 +47,19 @@ class Group extends Component {
   };
   render() {
     return (
-      <div>
+      <SectionStyles>
         <h1>Prioritise</h1>
         <p>
           Press the button that best describes how each Value relates to you.
         </p>
-        <Value
+        <Values
           addToGroup={this.addToGroup}
           nextStep={this.props.nextStep}
           isFinished={this.state.isFinished}
           valueKey={this.props.values[this.state.index].key}
           desc={this.props.values[this.state.index].description}
         />
-      </div>
+      </SectionStyles>
     );
   }
 }
