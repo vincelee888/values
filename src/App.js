@@ -14,6 +14,7 @@ import {
 } from "./components/styles";
 
 import { shuffle } from "./helpers/array";
+import { AppStyles } from "./components/styles";
 
 function StageSelect(props) {
   const {
@@ -207,7 +208,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <AppStyles>
         <StageSelect
           stages={this.state.stages}
           stageIndex={this.state.stageIndex}
@@ -219,7 +220,7 @@ class App extends Component {
           moveDown={this.moveDown}
           moveToTop={this.moveToTop}
         />
-      </div>
+      </AppStyles>
     );
   }
 }

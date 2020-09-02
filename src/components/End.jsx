@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 
 import Value from "./Value";
+import { SectionStyles } from "./styles";
 
 class End extends Component {
   state = {};
   render() {
     return (
-      <section>
+      <SectionStyles>
         <h1>Your Core Values</h1>
         <p>You have defined your core Values at this point in time, to be:</p>
         {Array.from(this.props.myValues).map((curr) => {
@@ -15,7 +16,7 @@ class End extends Component {
           );
           return <Value name={key} description={description} />;
         })}
-      </section>
+      </SectionStyles>
     );
   }
 }

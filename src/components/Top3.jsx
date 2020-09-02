@@ -15,8 +15,8 @@ class Top3 extends Component {
       <SectionStyles>
         <h1>Top3</h1>
         <p>
-          Now arrange your Top 10 in order of importance, where Values at the
-          top, have greater importance to you.
+          Use the buttons to arrange your Top 10 in order of importance, where
+          Values at the top, have greater importance to you.
         </p>
         {Array.from(this.props.top10).map((curr) => {
           const { key, description } = this.props.values.find(

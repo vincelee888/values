@@ -5,6 +5,8 @@ import {
   MainInputStyles,
   ButtonStyles,
   SectionStyles,
+  ColumnContainerStyles,
+  ColumnStyles,
 } from "./styles";
 
 class Value extends Component {
@@ -32,7 +34,6 @@ class Value extends Component {
     return (
       <ValueStyles>
         <h1>{this.props.value.key}</h1>
-        <p>{this.props.value.description}</p>
         {this.getButton()}
       </ValueStyles>
     );
@@ -69,20 +70,20 @@ class Top10 extends Component {
     return (
       <SectionStyles>
         <h1>Refine</h1>
-        <div className="columns">
-          <section className="col col--two">
+        <ColumnContainerStyles>
+          <ColumnStyles>
             <h2>Your Most Important Values</h2>
             {Array.from(this.props.groups.priority).map((v) =>
               this.toValueComponent(v, "priority")
             )}
-          </section>
-          <section className="col col--two">
+          </ColumnStyles>
+          <ColumnStyles>
             <h2>Your Top 10</h2>
             {Array.from(this.props.groups.top10).map((v) =>
               this.toValueComponent(v, "top10")
             )}
-          </section>
-        </div>
+          </ColumnStyles>
+        </ColumnContainerStyles>
         <Button
           nextStep={this.props.nextStep}
           top10={this.props.groups.top10}
