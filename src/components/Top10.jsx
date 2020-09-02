@@ -9,24 +9,31 @@ import {
 
 class Value extends Component {
   state = {};
+  getButton = () => {
+    const groupNames = ["priority", "top10"];
+
+    const result = groupNames.map((gn) => {
+      if (this.props.groupName !== gn) {
+        return (
+          <ButtonStyles
+            onClick={() => this.props.addToGroup(gn, this.props.value.key)}
+          >
+            Move
+          </ButtonStyles>
+        );
+      } else {
+        return <span></span>;
+      }
+    });
+
+    return result;
+  };
   render() {
-    console.log(this.props);
     return (
       <ValueStyles>
         <h1>{this.props.value.key}</h1>
         <p>{this.props.value.description}</p>
-        <ButtonStyles
-          onClick={() =>
-            this.props.addToGroup("priority", this.props.value.key)
-          }
-        >
-          &lt;
-        </ButtonStyles>
-        <ButtonStyles
-          onClick={() => this.props.addToGroup("top10", this.props.value.key)}
-        >
-          &gt;
-        </ButtonStyles>
+        {this.getButton()}
       </ValueStyles>
     );
   }
@@ -49,11 +56,12 @@ class Button extends Component {
 }
 
 class Top10 extends Component {
-  toValueComponent = (curr) => {
+  toValueComponent = (curr, groupName) => {
     return (
       <Value
         value={this.props.values.find((v) => v.key === curr)}
         addToGroup={this.props.addToGroup}
+        groupName={groupName}
       />
     );
   };
@@ -64,11 +72,15 @@ class Top10 extends Component {
         <div className="columns">
           <section className="col col--two">
             <h2>Your Most Important Values</h2>
-            {Array.from(this.props.groups.priority).map(this.toValueComponent)}
+            {Array.from(this.props.groups.priority).map((v) =>
+              this.toValueComponent(v, "priority")
+            )}
           </section>
           <section className="col col--two">
             <h2>Your Top 10</h2>
-            {Array.from(this.props.groups.top10).map(this.toValueComponent)}
+            {Array.from(this.props.groups.top10).map((v) =>
+              this.toValueComponent(v, "top10")
+            )}
           </section>
         </div>
         <Button

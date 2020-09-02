@@ -126,7 +126,7 @@ class App extends Component {
       "end",
     ],
     stageIndex: 0,
-    values: shuffle(values).slice(0, 11),
+    values: shuffle(values),
     groups: {
       priority: new Set(),
       important: new Set(),

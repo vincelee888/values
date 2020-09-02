@@ -5,7 +5,6 @@ import { ValueStyles } from "./styles";
 class Value extends Component {
   state = {};
   render() {
-    console.log(this.props);
     return (
       <ValueStyles>
         <h1>{this.props.name}</h1>

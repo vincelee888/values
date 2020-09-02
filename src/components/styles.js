@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const SectionStyles = styled.section`
-  padding: 1em;
+  padding: 1em 1em 20vh 1em;
 `;
 
 const ButtonStyles = styled.button`
@@ -33,6 +33,12 @@ const MainInputStyles = styled.div`
   align-items: center;
 `;
 
+const ButtonContainerStyles = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`;
+
 const ValueStyles = styled.div`
   margin: 1em;
   padding: 1em;
@@ -46,4 +52,10 @@ const ValueStyles = styled.div`
   }
 `;
 
-export { MainInputStyles, ButtonStyles, ValueStyles, SectionStyles };
+export {
+  MainInputStyles,
+  ButtonStyles,
+  ButtonContainerStyles,
+  ValueStyles,
+  SectionStyles,
+};
