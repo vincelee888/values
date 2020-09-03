@@ -32,7 +32,7 @@ function StageSelect(props) {
     moveDown,
   } = props;
 
-  const sharePath = `/values/share?values=${Array.from(groups.top10)
+  const sharePath = `/share?values=${Array.from(groups.top10)
     .slice(0, 3)
     .join(",")}`;
 
@@ -236,7 +236,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/values/share">
+          <Route path="/share">
             <Share values={this.state.values} />
           </Route>
 
