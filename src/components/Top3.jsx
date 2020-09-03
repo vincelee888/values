@@ -23,7 +23,7 @@ class Top3 extends Component {
             (v) => v.key === curr
           );
           return (
-            <ValueStyles>
+            <ValueStyles key={curr}>
               <h1>{name}</h1>
               <p>{description}</p>
               <ButtonContainerStyles>

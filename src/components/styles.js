@@ -8,7 +8,7 @@ const AppStyles = styled.div`
 `;
 
 const SectionStyles = styled.section`
-  padding: 1em 1em 20vh 1em;
+  padding: 1em 1em 24vh 1em;
 `;
 
 const ButtonStyles = styled.button`

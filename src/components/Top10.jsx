@@ -60,6 +60,7 @@ class Top10 extends Component {
   toValueComponent = (curr, groupName) => {
     return (
       <Value
+        key={curr}
         value={this.props.values.find((v) => v.key === curr)}
         addToGroup={this.props.addToGroup}
         groupName={groupName}

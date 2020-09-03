@@ -142,7 +142,29 @@ class App extends Component {
 
   nextStep = () => {
     const stageIndex = this.state.stageIndex;
-    this.setState({ stageIndex: stageIndex + 1 });
+    const groups = this.state.groups;
+
+    const skipGrouping = () => {
+      groups.top10 = groups.priority;
+
+      return {
+        groups,
+        stageIndex: this.state.stages.indexOf("top3-desc"),
+      };
+    };
+
+    const incrementStage = () => {
+      return {
+        stageIndex: stageIndex + 1,
+      };
+    };
+
+    const stateChanges =
+      stageIndex < this.state.stages.indexOf("top3-desc") &&
+      groups.priority.size === 10
+        ? skipGrouping()
+        : incrementStage();
+    this.setState(stateChanges);
   };
 
   addToGroup = (groupName, valueKey) => {
