@@ -19,12 +19,12 @@ class Top3 extends Component {
           Values at the top, have greater importance to you.
         </p>
         {Array.from(this.props.top10).map((curr) => {
-          const { key, description } = this.props.values.find(
+          const { key, name, description } = this.props.values.find(
             (v) => v.key === curr
           );
           return (
             <ValueStyles>
-              <h1>{key}</h1>
+              <h1>{name}</h1>
               <p>{description}</p>
               <ButtonContainerStyles>
                 <ButtonStyles

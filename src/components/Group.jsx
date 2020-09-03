@@ -4,7 +4,7 @@ import Value from "./Value";
 import { ButtonStyles, MainInputStyles, SectionStyles } from "./styles";
 
 function Values(props) {
-  const { isFinished, valueKey, desc, addToGroup, nextStep } = props;
+  const { isFinished, name, desc, addToGroup, nextStep } = props;
 
   if (isFinished) {
     return (
@@ -15,7 +15,7 @@ function Values(props) {
   } else {
     return (
       <div>
-        <Value name={valueKey} description={desc} />
+        <Value name={name} description={desc} />
         <MainInputStyles>
           <ButtonStyles onClick={() => addToGroup("priority")}>
             very important to me
@@ -57,6 +57,7 @@ class Group extends Component {
           nextStep={this.props.nextStep}
           isFinished={this.state.isFinished}
           valueKey={this.props.values[this.state.index].key}
+          name={this.props.values[this.state.index].name}
           desc={this.props.values[this.state.index].description}
         />
       </SectionStyles>

@@ -1,10 +1,15 @@
 import React, { Component } from "react";
-import "./App.css";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 
 import Group from "./components/Group";
 import Top10 from "./components/Top10";
 import Top3 from "./components/Top3";
-import End from "./components/End";
+import Share from "./components/Share";
 
 import values from "./data/values";
 import {
@@ -26,6 +31,10 @@ function StageSelect(props) {
     moveUp,
     moveDown,
   } = props;
+
+  const sharePath = `/share?values=${Array.from(groups.top10)
+    .slice(0, 3)
+    .join(",")}`;
 
   const stages = {
     intro: (
@@ -101,12 +110,7 @@ function StageSelect(props) {
         nextStep={nextStep}
       ></Top3>
     ),
-    end: (
-      <End
-        myValues={Array.from(groups.top10).slice(0, 3)}
-        values={values}
-      ></End>
-    ),
+    end: <Redirect to={sharePath} />,
   };
 
   return stages[
@@ -208,19 +212,29 @@ class App extends Component {
 
   render() {
     return (
-      <AppStyles>
-        <StageSelect
-          stages={this.state.stages}
-          stageIndex={this.state.stageIndex}
-          values={this.state.values}
-          groups={this.state.groups}
-          nextStep={this.nextStep}
-          addToGroup={this.addToGroup}
-          moveUp={this.moveUp}
-          moveDown={this.moveDown}
-          moveToTop={this.moveToTop}
-        />
-      </AppStyles>
+      <Router>
+        <Switch>
+          <Route path="/share">
+            <Share values={this.state.values} />
+          </Route>
+
+          <Route path="/">
+            <AppStyles>
+              <StageSelect
+                stages={this.state.stages}
+                stageIndex={this.state.stageIndex}
+                values={this.state.values}
+                groups={this.state.groups}
+                nextStep={this.nextStep}
+                addToGroup={this.addToGroup}
+                moveUp={this.moveUp}
+                moveDown={this.moveDown}
+                moveToTop={this.moveToTop}
+              />
+            </AppStyles>
+          </Route>
+        </Switch>
+      </Router>
     );
   }
 }

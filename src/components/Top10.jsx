@@ -33,7 +33,7 @@ class Value extends Component {
   render() {
     return (
       <ValueStyles>
-        <h1>{this.props.value.key}</h1>
+        <h1>{this.props.value.name}</h1>
         {this.getButton()}
       </ValueStyles>
     );
