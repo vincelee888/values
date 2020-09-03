@@ -13,7 +13,7 @@ class Top3 extends Component {
   render() {
     return (
       <SectionStyles>
-        <h1>Top3</h1>
+        <h1>Define</h1>
         <p>
           Use the buttons to arrange your Top 10 in order of importance, where
           Values at the top, have greater importance to you.
