@@ -37,7 +37,7 @@ class End extends Component {
       <SectionStyles>
         <MyValues values={this.props.values} myValues={this.props.myValues} />
         <MainInputStyles>
-          <ButtonStyles onClick={() => (window.location.href = "/")}>
+          <ButtonStyles onClick={() => (window.location.href = "/values")}>
             Try Again
           </ButtonStyles>
         </MainInputStyles>
