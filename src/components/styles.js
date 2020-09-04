@@ -20,8 +20,9 @@ const ButtonStyles = styled.button`
     rgba(0, 212, 255, 1) 100%
   );
   color: white;
-  box-shadow: 2px 2px 2px green;
-  text-shadow: 2px 2px 2px rgba(39, 34, 126, 0.5);
+  text-shadow: rgba(56, 56, 126, 0.5);
+  box-shadow: inset 0px 0px 4px 1px rgba(39, 34, 126, 0.7),
+    2px 2px 2px rgba(99, 173, 59, 1);
   border-radius: 10px;
   border: none;
   cursor: pointer;
@@ -34,7 +35,12 @@ const MainInputStyles = styled.div`
   left: 0;
   width: 100vw;
   height: 20vh;
-  background: greenyellow;
+  background: rgb(99, 173, 59);
+  background: linear-gradient(
+    0deg,
+    rgba(99, 173, 59, 1) 0%,
+    rgba(158, 251, 96, 1) 100%
+  );
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -50,7 +56,7 @@ const ValueStyles = styled.div`
   margin: 1em;
   padding: 1em;
   background: white;
-  box-shadow: 2px 2px 2px green;
+  box-shadow: 2px 2px 2px rgba(99, 173, 59, 0.5);
   display: block;
   border-radius: 10px;
   text-align: center;

@@ -26,6 +26,14 @@ const MyValues = ({ values, myValues }) => {
         const v = values.find((v) => v.key === mv);
         return <Value key={v.key} name={v.name} description={v.description} />;
       })}
+      <p>
+        Armed with your core Values, you might like to look into{" "}
+        <a href="https://en.wikipedia.org/wiki/Acceptance_and_commitment_therapy">
+          ACT training
+        </a>
+        , to learn how you can steer your actions towards more desirable
+        outcomes.
+      </p>
     </div>
   );
 };
