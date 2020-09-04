@@ -1,15 +1,10 @@
 import React, { Component } from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Redirect,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Group from "./components/Group";
 import Top10 from "./components/Top10";
 import Top3 from "./components/Top3";
-import Share from "./components/Share";
+import End from "./components/End";
 
 import values from "./data/values";
 import {
@@ -31,10 +26,6 @@ function StageSelect(props) {
     moveUp,
     moveDown,
   } = props;
-
-  const sharePath = `/share?values=${Array.from(groups.top10)
-    .slice(0, 3)
-    .join(",")}`;
 
   const stages = {
     intro: (
@@ -110,7 +101,12 @@ function StageSelect(props) {
         nextStep={nextStep}
       ></Top3>
     ),
-    end: <Redirect to={sharePath} />,
+    end: (
+      <End
+        myValues={Array.from(groups.top10).slice(0, 3)}
+        values={values}
+      ></End>
+    ),
   };
 
   return stages[
@@ -236,11 +232,7 @@ class App extends Component {
     return (
       <Router>
         <Switch>
-          <Route path="/share">
-            <Share values={this.state.values} />
-          </Route>
-
-          <Route path="/values">
+          <Route path="/">
             <AppStyles>
               <StageSelect
                 stages={this.state.stages}
@@ -254,10 +246,6 @@ class App extends Component {
                 moveToTop={this.moveToTop}
               />
             </AppStyles>
-          </Route>
-
-          <Route path="/">
-            <Redirect to="/values"></Redirect>
           </Route>
         </Switch>
       </Router>
