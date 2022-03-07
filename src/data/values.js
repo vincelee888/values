@@ -230,7 +230,7 @@ const values = [
     key: "MogcKx",
     name: "Skilfulness",
     description:
-      "to continually practice and imprive my skills and apply myself fully",
+      "to continually practice and improve my skills and apply myself fully",
   },
   {
     key: "vU5gW4",
