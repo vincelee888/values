@@ -1,10 +1,37 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 
 import Value from "./Value";
 import { ButtonStyles, MainInputStyles, SectionStyles } from "./styles";
 
 function Values(props) {
   const { isFinished, name, desc, addToGroup, nextStep } = props;
+
+  const handleKeyPress = (keyPressEvent) => {
+    const key = keyPressEvent.key
+    console.log({key})
+
+    const keyPressActions = {
+      '1': 'priority',
+      '2': 'important',
+      '3': 'unimportant'
+    }
+
+    const action = keyPressActions[key]
+
+    if(!isFinished && action) {
+      addToGroup(action)
+    }
+  }
+
+  useEffect(() => {
+    const args = ['keydown', handleKeyPress, false]
+
+    document.addEventListener(...args)
+
+    return () => {
+      document.removeEventListener(...args)
+    }
+  })
 
   if (isFinished) {
     return (
@@ -18,13 +45,13 @@ function Values(props) {
         <Value name={name} description={desc} />
         <MainInputStyles>
           <ButtonStyles onClick={() => addToGroup("priority")}>
-            very important to me
+            very important to me (1)
           </ButtonStyles>
           <ButtonStyles onClick={() => addToGroup("important")}>
-            quite important to me
+            quite important to me (2)
           </ButtonStyles>
           <ButtonStyles onClick={() => addToGroup("unimportant")}>
-            not important to me
+            not important to me (3)
           </ButtonStyles>
         </MainInputStyles>
       </div>

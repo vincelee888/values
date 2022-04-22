@@ -1,19 +1,10 @@
 import React, { Component } from "react";
-import { useLocation, Redirect } from "react-router-dom";
-
-import CopyToClipboard from "react-copy-to-clipboard";
+import { Redirect } from "react-router-dom";
 
 import Value from "./Value";
 import { SectionStyles, ButtonStyles, MainInputStyles } from "./styles";
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
-
 const MyValues = ({ values, myValues }) => {
-  const sharePath = `share?values=${myValues.join(",")}`;
-  const shareUrl = `${window.location.href}${sharePath}`;
-
   if (myValues[0] === undefined) {
     return <Redirect to="/" />;
   }
